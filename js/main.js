@@ -11,6 +11,7 @@ title = document.querySelectorAll(".title");
 // recentprogress = document.querySelectorAll(".recent-progress");
 recentitem = document.getElementsByClassName("recent-item")[0];
 
+overlay = document.getElementById("overlay");
 title.forEach((element, index) => {
   console.log("H2 actual width:", element.getBoundingClientRect().width);
 });
@@ -50,9 +51,18 @@ navlinkli.forEach((element, index) => {
   });
 });
 
+/**Thanh menu**/
+
 btnnavbarcon.addEventListener("click", () => {
   navlink.classList.toggle("nav__link__active");
   btnnavbarcon.classList.toggle("open");
+  overlay.classList.toggle("show");
+});
+
+overlay.addEventListener("click", () => {
+  navlink.classList.toggle("nav__link__active");
+  btnnavbarcon.classList.toggle("open");
+  overlay.classList.toggle("show");
 });
 
 switchModebtn.addEventListener("change", () => {
